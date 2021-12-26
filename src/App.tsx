@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { Box, AppBar, IconButton, Toolbar, Typography, Button, Container,  Card,  Grid } from '@mui/material';
+import { Box, AppBar, IconButton, Toolbar, Typography, Button, Container, Card, Grid } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import './logo.svg';
 
 interface GithubRepos {
   id: number;
@@ -29,7 +28,7 @@ function App() {
   }, []);
 
   return (
-    <Container>
+    <div>
       <AppBar>
         <Toolbar>
           <IconButton
@@ -46,17 +45,19 @@ function App() {
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
-      {data.map((item) => (
-        <Grid>
-          <Box sx={{ flexWrap: 'wrap'}}>
-            <Card key={item.id} className='card' sx={{ marginTop: 10, maxWidth: 500 }}>
-              <h3 className='repo-text'>{item.name}</h3>
-              <span className='repo-description'>{item.description}</span>
-            </Card>
-          </Box>
-        </Grid>
+      {data.map(item => (
+        <span key={item.id}>
+          <Grid>
+            <Box sx={{ flexWrap: 'wrap' }}>
+              <Card className='card' sx={{ marginTop: 10, marginLeft: 5, maxWidth: 500 }}>
+                <h3 className='repo-text'>{item.name}</h3>
+                <span className='repo-description'>{item.description}</span>
+              </Card>
+            </Box>
+          </Grid>
+        </span>
       ))}
-    </Container>
+    </div>
   );
 }
 
