@@ -8,6 +8,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <h3>***</h3>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -22,7 +23,7 @@ function App() {
         >
           Learn React
         </a>
-        <Counter start={10000} step={5} />
+        <Counter start={0} step={5} />
       </header>
     </div>
   );
